@@ -3,7 +3,7 @@ import type {
     Character,
 } from '../types/character'
 
-const BASE_URL = 'https://rickandmortyapi.com/api'
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 export const fetchCharacters = async (
     page: number
