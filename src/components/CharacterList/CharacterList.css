@@ -1,0 +1,152 @@
+.character-list-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.character-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.character-list-header h1 {
+    margin: 0;
+    color: #333;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.character-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.character-table thead tr {
+    background-color: #f5f5f5;
+}
+
+.character-table th {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+    color: #555;
+}
+
+.character-table tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s;
+}
+
+.character-row {
+    cursor: pointer;
+}
+
+.character-row:hover {
+    background-color: #f9f9f9;
+}
+
+.character-table td {
+    padding: 12px;
+}
+
+.character-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-alive {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-dead {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-unknown {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-info {
+    color: #666;
+    font-weight: 500;
+}
+
+.pagination-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn:hover:not(.btn-disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-primary:hover:not(.btn-disabled) {
+    background-color: #1976D2;
+}
+
+.btn-refresh {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-refresh:hover:not(.btn-disabled) {
+    background-color: #45a049;
+}
+
+.btn-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.error {
+    padding: 20px;
+    color: #d32f2f;
+    background-color: #ffebee;
+    border-radius: 4px;
+    margin: 20px;
+}
