@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# Rick & Morty Character Browser
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based single-page application to browse Rick & Morty characters using the official API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation & Setup
 
-## React Compiler
+1. **Clone the repository**
+    
+    ```bash
+    git clone https://github.com/GovindPawar111/rick-morty-character-browser.git
+    
+    ```
+    
+2. **Navigate to the project directory**
+    
+    ```bash
+    cd rick-morty-character-browser
+    
+    ```
+    
+3. **Install dependencies**
+    
+    ```bash
+    npm install
+    
+    ```
+    
+4. **Start the development server**
+    
+    ```bash
+    npm run dev
+    
+    ```
+    
+5. **Open your browser and visit**
+    
+    ```
+    http://localhost:5173
+    
+    ```
+    
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Available Scripts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `npm run dev` - Starts the development server with hot reload
+- `npm run build` - Builds the production-ready app
+- `npm run preview` - Previews the production build locally
+- `npm run lint` - Runs ESLint to analyze code quality
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Project Structure & Routes
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Route | Description | Component |
+| --- | --- | --- |
+| `/` | Home page | `HomePage` |
+| `/characters` | Paginated list of characters | `CharacterList` |
+| `/character/:id` | Character detail page | `CharacterDetail` |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Main Libraries Used
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Library | Purpose |
+| --- | --- |
+| React (v19) | UI framework |
+| Vite | Build tool & dev server |
+| TypeScript | Static typing |
+| @tanstack/react-router | Client-side routing |
+| @tanstack/react-query | Data fetching & caching |
+| @tanstack/react-table | Table rendering (character list) |
+
+---
+
+## API Endpoints Used
+
+- Base URL: `https://rickandmortyapi.com/api`
+
+| Endpoint | Description |
+| --- | --- |
+| `/character?page={page}` | Fetch paginated characters |
+| `/character/{id}` | Fetch character details by ID |
+
+---
+
+## License
+
+This project is licensed under the MIT License.
